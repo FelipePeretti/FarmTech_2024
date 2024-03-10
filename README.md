@@ -9,7 +9,7 @@ Este repositório contém os códigos fonte de um protótipo de Sistema de gest�
 - **db/**: Contém scripts e arquivos relacionados ao banco de dados PostgreSQL.
 - **deviceIoT/**: Contém o firmware para o dispositivo IoT ESP32 desenvolvido em C++ com PlatformIO.
 
-## :computer: Frontend
+## :computer: <img src="https://angular.io/assets/images/logos/angular/angular.svg" width="20" height="20" /> Frontend
 
 O frontend deste projeto foi desenvolvido utilizando o framework Angular. Nele, você encontrará os componentes, serviços e estilos relacionados à interface do usuário.
 
@@ -37,7 +37,7 @@ O backend foi construído utilizando Node.js e NestJS, um framework Node.js para
 
 Este diretório contém scripts e arquivos relacionados ao banco de dados PostgreSQL. Aqui estão armazenados os esquemas, consultas e configurações necessárias para o funcionamento do banco de dados.
 
-## :electric_plug: Device IoT
+## :electric_plug: <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Arduino_Logo.svg/1280px-Arduino_Logo.svg.png" width="20" height="20" /> Device IoT
 
 A pasta deviceIoT/ contém o firmware para o dispositivo IoT ESP32, desenvolvido em C++ utilizando PlatformIO. Este firmware controla o comportamento do dispositivo e permite a comunicação com outros componentes do sistema.
 
@@ -53,4 +53,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou env
 
 ## Licença
 
-Este projeto está licenciado sob a [MIT License](LICENSE).
+Este projeto está licenciado sob a [Apache License 2.0](LICENSE).
