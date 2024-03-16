@@ -1,0 +1,32 @@
+<mat-sidenav-container class="container">
+    <mat-sidenav class="sidenav" mode="side" opened fixedInViewport="true" fixedTopGap="64">
+        <mat-nav-list class="nav-list">
+            <a mat-list-item routerLink="/">
+                <i class="material-icons v-bottom">
+                    home
+                </i>
+                Início
+            </a>
+            <a mat-list-item routerLink="/sensor">
+                <i class="material-icons v-bottom">
+                    sensors
+                </i>
+                Sensores
+            </a>
+            <a mat-list-item routerLink="/sensor">
+                <i class="material-icons v-bottom">                    
+                    videocam
+                </i>                            
+                Cameras
+            </a>
+            <a class="nav-footer" mat-list-item>
+                09/03/2024&nbsp;&nbsp;&nbsp;
+                16:58
+            </a>
+            
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content class="content">  
+        <router-outlet></router-outlet>      
+    </mat-sidenav-content>
+</mat-sidenav-container>

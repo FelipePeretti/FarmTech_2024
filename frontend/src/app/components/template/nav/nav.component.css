@@ -1,0 +1,25 @@
+.sidenav{    
+    width: 200px;    
+}
+
+.sidenav a {
+    color: #fff
+}
+
+.sidenav i {
+    padding-right: 1px;
+    vertical-align: text-bottom;
+}
+
+.content{
+    padding: 16px;
+}
+
+.nav-footer{
+    position: fixed;
+    bottom: 0;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center; 
+}
