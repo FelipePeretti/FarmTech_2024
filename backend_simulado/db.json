@@ -1,53 +1,32 @@
 {
   "sensor": [
     {
-      "id": "15",
-      "_nomeSensor": "lavoura_milho_2",
-      "_localizacao": "41.40338 2.17403",
+      "id": "be4b",
+      "_nomeSensor": "Sensor01",
+      "_localizacao": "Lavoura01",
+      "_tipoSensor": "Temperatura",
+      "_dataInstalacao": "2024-03-16T03:00:00.000Z"
+    },
+    {
+      "id": "0873",
+      "_nomeSensor": "Sensor02",
+      "_localizacao": "Lavoura02",
       "_tipoSensor": "Pressão",
-      "_dataInstalacao": "2024-03-09T10:00:00Z"
+      "_dataInstalacao": "2024-03-15T03:00:00.000Z"
     },
     {
-      "id": "14",
-      "_nomeSensor": "lavoura_milho_3",
-      "_localizacao": "41.40338 2.17403",
-      "_tipoSensor": "Umidade",
-      "_dataInstalacao": "2024-03-09T10:00:00Z"
+      "id": "b7d8",
+      "_nomeSensor": "Sensor03",
+      "_localizacao": "Lavoura03",
+      "_tipoSensor": "Umidade do ar",
+      "_dataInstalacao": "2024-03-01T03:00:00.000Z"
     },
     {
-      "id": "12",
-      "_nomeSensor": "lavoura_milho_4",
-      "_localizacao": "41.40338 2.17403",
-      "_tipoSensor": "Pluviometro",
-      "_dataInstalacao": "2024-03-09T10:00:00Z"
-    },
-    {
-      "id": "19",
-      "_nomeSensor": "lavoura_milho_5",
-      "_localizacao": "41.40338 2.17403",
-      "_tipoSensor": "Sensor UV",
-      "_dataInstalacao": "2024-03-09T10:00:00Z"
-    },
-    {
-      "id": "21",
-      "_nome": "Sensor1",
-      "_localizacao": "Sala",
-      "_tipo": "Temperatura",
-      "_dataInstalacao": "2024-03-08T00:00:00.000Z"
-    },
-    {
-      "id": "15",
-      "_nome": "Sensor1",
-      "_localizacao": "Sala",
-      "_tipo": "Temperatura",
-      "_dataInstalacao": "2024-03-08T00:00:00.000Z"
-    },
-    {
-      "id": "3",
-      "_nome": "Sensor2",
-      "_localizacao": "Sala",
-      "_tipo": "Temperatura",
-      "_dataInstalacao": "2024-03-08T00:00:00.000Z"
+      "id": "2385",
+      "_nomeSensor": "Sensor04",
+      "_localizacao": "Lavoura04",
+      "_tipoSensor": "Umidade do solo",
+      "_dataInstalacao": "2024-03-13T03:00:00.000Z"
     }
   ],
   "camera": [
