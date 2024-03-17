@@ -29,6 +29,25 @@ export class SensorService {
     );
   }
 
+  read(): Observable<Sensor[]> {
+    return this.http.get<Sensor[]>(this.baseUrl);
+  }
+
+  readById(id: string): Observable<Sensor> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.get<Sensor>(url);
+  }
+
+  update(sensor: Sensor): Observable<Sensor> {
+    const url = `${this.baseUrl}/${sensor.id}`;
+    return this.http.put<Sensor>(url, sensor);
+  }
+
+  delete(id: string): Observable<Sensor> {
+    const url = `${this.baseUrl}/${id}`;
+    return this.http.delete<Sensor>(url);
+  }
+
   errorHandler(e: any): Observable<any> {
     this.showMessage("Ocorreu um erro!", true);
     return EMPTY;

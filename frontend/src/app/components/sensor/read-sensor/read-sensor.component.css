@@ -1,0 +1,13 @@
+.mat-column-update {
+  width: 32px;
+  text-align: center;
+}
+.mat-column-delete {
+  width: 32px;
+  text-align: center;
+}
+
+td,
+th {
+  text-align: center;
+}
