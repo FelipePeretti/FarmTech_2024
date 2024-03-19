@@ -3,8 +3,6 @@ import { MatSidenavModule } from "@angular/material/sidenav";
 import { MatCardModule } from "@angular/material/card";
 import { MatListModule } from "@angular/material/list";
 import { RouterOutlet, RouterLink } from "@angular/router";
-import { Observable, interval } from "rxjs";
-import { map } from "rxjs/operators";
 import { CommonModule } from "@angular/common";
 import { HomeComponent } from "../../../view/home/home.component";
 import { CrudComponent } from "../../../view/crud/crud.component";
@@ -27,8 +25,16 @@ import { SensorCreateComponent } from "../../sensor/sensor-create/sensor-create.
   templateUrl: "./nav.component.html",
   styleUrl: "./nav.component.css",
 })
-export class NavComponent {
-  timeString: String = "";
+export class NavComponent implements OnInit {
+  time: number = 0;
 
   constructor() {}
+
+  ngOnInit(): void {
+    //setInterval(() => this.setCurrentTime(this.time), 1000);
+  }
+
+  setCurrentTime(numberTimer: number): void {
+    this.time++;
+  }
 }
