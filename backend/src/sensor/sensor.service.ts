@@ -12,7 +12,7 @@ export class SensorService {
     const query =
       'select s.*, st.tipo as _tipoSensor from sensor s join sensor_tipo st on st.id = s.tipo_sensor_id';
 
-    const result: any = await this.pool.query(query);
+    const result: Sensor[] = await this.pool.query(query);
 
     return result;
   }
