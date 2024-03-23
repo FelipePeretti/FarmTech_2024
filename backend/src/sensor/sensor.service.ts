@@ -17,30 +17,28 @@ export class SensorService {
     return result;
   }
 
-  inserirSensor(sensor: Sensor): void {
-    this.sensores.push(sensor);
+  async inserirSensor(sensor: Sensor): Promise<Sensor> {
+    const query = `INSERT INTO public.sensor ("_nomeSensor", "_localizacao", tipo_sensor_id, "_dataInstalacao") VALUES('${sensor._nomeSensor}', '${sensor._localizacao}', 9, '${sensor._dataInstalacao}');`;
+
+    const result: Sensor = await this.pool.query(query);
+
+    return result;
   }
 
-  alterarSensor(id: number, novoSensor: Sensor): void {
-    const index = this.sensores.findIndex((sensor) => sensor.id === id);
-
-    if (index !== -1) {
-      if (novoSensor._nomeSensor !== undefined) {
-        this.sensores[index]._nomeSensor = novoSensor._nomeSensor;
-      }
-      if (novoSensor._localizacao !== undefined) {
-        this.sensores[index]._localizacao = novoSensor._localizacao;
-      }
-      if (novoSensor._tipoSensor !== undefined) {
-        this.sensores[index]._tipoSensor = novoSensor._tipoSensor;
-      }
-      if (novoSensor._dataInstalacao !== undefined) {
-        this.sensores[index]._dataInstalacao = novoSensor._dataInstalacao;
-      }
-    }
+  async alterarSensor(id: number, novoSensor: Sensor): Promise<void> {
+    const query = `UPDATE public.sensor SET "_nomeSensor"='${novoSensor._nomeSensor}', "_localizacao"='${novoSensor._localizacao}', tipo_sensor_id=9, "_dataInstalacao"='${novoSensor._dataInstalacao}' WHERE id=${id};`;
+    await this.pool.queryOnly(query);
   }
 
-  removerSensor(id: number): void {
-    this.sensores = this.sensores.filter((sensor) => sensor.id !== id);
+  async removerSensor(id: number): Promise<Sensor> {
+    const query = `DELETE FROM public.sensor WHERE id=${id};`;
+    const result: Sensor = await this.pool.query(query);
+    return result;
+  }
+
+  async readById(id: number): Promise<Sensor> {
+    const query = `SELECT s.*, s.tipo_sensor_id as _tipoSensor FROM public.sensor s WHERE id=${id} LIMIT 1;`;
+    const result: Sensor = await this.pool.queryOne(query);
+    return result;
   }
 }

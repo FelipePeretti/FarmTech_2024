@@ -19,6 +19,11 @@ export class SensorController {
     return await this.sensorService.listarSensores();
   }
 
+  @Get(':id')
+  async getSensorByID(@Param('id') id: number): Promise<Sensor> {
+    return await this.sensorService.readById(id);
+  }
+
   @Post()
   inserirSensor(@Body() sensor: Sensor): void {
     this.sensorService.inserirSensor(sensor);
