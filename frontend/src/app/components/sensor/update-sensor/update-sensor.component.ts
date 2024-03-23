@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, OnInit } from "@angular/core";
 import { MatCardModule } from "@angular/material/card";
 import { FormsModule } from "@angular/forms";
 import { MatFormFieldModule } from "@angular/material/form-field";
@@ -27,7 +27,7 @@ export class UpdateSensorComponent implements OnInit {
   sensor: Sensor = {
     _nomeSensor: "",
     _localizacao: "",
-    _tipoSensor: "",
+    _tiposensor: "",
     _dataInstalacao: "",
   };
 
@@ -39,9 +39,9 @@ export class UpdateSensorComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
-    this.sensorService
-      .readById(id!)
-      .subscribe((sensor) => (this.sensor = sensor));
+    this.sensorService.readById(id!).subscribe((sensor) => {
+      this.sensor = sensor;
+    });
   }
 
   updateSensor(): void {

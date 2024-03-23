@@ -27,7 +27,7 @@ export class SensorCreateComponent implements OnInit {
   sensor: Sensor = {
     _nomeSensor: "",
     _localizacao: "",
-    _tipoSensor: "",
+    _tiposensor: "",
     _dataInstalacao: "",
   };
 

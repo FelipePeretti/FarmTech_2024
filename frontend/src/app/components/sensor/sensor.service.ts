@@ -35,7 +35,8 @@ export class SensorService {
 
   readById(id: string): Observable<Sensor> {
     const url = `${this.baseUrl}/${id}`;
-    return this.http.get<Sensor>(url);
+    const sensor = this.http.get<Sensor>(url);
+    return sensor;
   }
 
   update(sensor: Sensor): Observable<Sensor> {

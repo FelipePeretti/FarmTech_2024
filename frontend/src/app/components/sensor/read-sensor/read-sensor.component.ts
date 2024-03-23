@@ -28,7 +28,7 @@ export class ReadSensorComponent implements OnInit {
     "id",
     "_nomeSensor",
     "_localizacao",
-    "_tipoSensor",
+    "_tiposensor",
     "_dataInstalacao",
     "update",
     "delete",
