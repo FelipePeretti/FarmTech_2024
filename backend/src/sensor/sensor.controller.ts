@@ -25,17 +25,20 @@ export class SensorController {
   }
 
   @Post()
-  inserirSensor(@Body() sensor: Sensor): void {
-    this.sensorService.inserirSensor(sensor);
+  async inserirSensor(@Body() sensor: Sensor): Promise<Sensor> {
+    return await this.sensorService.inserirSensor(sensor);
   }
 
   @Put(':id')
-  alterarSensor(@Param('id') id: number, @Body() novoSensor: Sensor): void {
-    this.sensorService.alterarSensor(+id, novoSensor);
+  async alterarSensor(
+    @Param('id') id: number,
+    @Body() novoSensor: Sensor,
+  ): Promise<void> {
+    return await this.sensorService.alterarSensor(+id, novoSensor);
   }
 
   @Delete(':id')
-  removerSensor(@Param('id') id: number): void {
-    this.sensorService.removerSensor(+id);
+  async removerSensor(@Param('id') id: number): Promise<void> {
+    return await this.sensorService.removerSensor(+id);
   }
 }

@@ -4,13 +4,11 @@ import { Database } from 'src/infra/config';
 
 @Injectable()
 export class SensorService {
-  private sensores: Sensor[] = [];
-
   constructor(private pool: Database) {}
 
   async listarSensores(): Promise<any[]> {
     const query =
-      'select s.*, st.tipo as _tipoSensor from sensor s join sensor_tipo st on st.id = s.tipo_sensor_id';
+      'select s.*, st.tipo as _tipoSensor from sensor s join sensor_tipo st on st.id = s.tipo_sensor_id ORDER BY st.id ASC;';
 
     const result: Sensor[] = await this.pool.query(query);
 
@@ -18,21 +16,20 @@ export class SensorService {
   }
 
   async inserirSensor(sensor: Sensor): Promise<Sensor> {
-    const query = `INSERT INTO public.sensor ("_nomeSensor", "_localizacao", tipo_sensor_id, "_dataInstalacao") VALUES('${sensor._nomeSensor}', '${sensor._localizacao}', 9, '${sensor._dataInstalacao}');`;
-
+    const query = `INSERT INTO public.sensor ("_nomeSensor", "_localizacao", tipo_sensor_id, "_dataInstalacao") VALUES('${sensor._nomeSensor}', '${sensor._localizacao}', ${parseInt(sensor._tiposensor)}, '${sensor._dataInstalacao}');`;
     const result: Sensor = await this.pool.query(query);
 
     return result;
   }
 
   async alterarSensor(id: number, novoSensor: Sensor): Promise<void> {
-    const query = `UPDATE public.sensor SET "_nomeSensor"='${novoSensor._nomeSensor}', "_localizacao"='${novoSensor._localizacao}', tipo_sensor_id=9, "_dataInstalacao"='${novoSensor._dataInstalacao}' WHERE id=${id};`;
-    await this.pool.queryOnly(query);
+    const query = `UPDATE public.sensor SET "_nomeSensor"='${novoSensor._nomeSensor}', "_localizacao"='${novoSensor._localizacao}', tipo_sensor_id=${parseInt(novoSensor._tiposensor)}, "_dataInstalacao"='${novoSensor._dataInstalacao}' WHERE id=${id};`;
+    return await this.pool.queryOnly(query);
   }
 
-  async removerSensor(id: number): Promise<Sensor> {
+  async removerSensor(id: number): Promise<void> {
     const query = `DELETE FROM public.sensor WHERE id=${id};`;
-    const result: Sensor = await this.pool.query(query);
+    const result = await this.pool.query(query);
     return result;
   }
 
