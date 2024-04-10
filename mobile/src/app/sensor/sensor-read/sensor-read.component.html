@@ -1,0 +1,11 @@
+<ion-card *ngFor="let sensor of sensors">
+  <ion-card-header>
+    <ion-card-title><ion-icon name="hardware-chip"></ion-icon> {{ sensor._nomeSensor }}</ion-card-title>
+      
+  </ion-card-header>
+  <ion-card-content>
+    <p><strong>Tipo:</strong> {{ sensor._tiposensor }}</p>
+    <p><strong>Localização:</strong> {{ sensor._localizacao }}</p>
+    <p><strong>Data de Instalação:</strong> {{ sensor._dataInstalacao }}</p>
+  </ion-card-content>
+</ion-card>

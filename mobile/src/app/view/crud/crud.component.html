@@ -1,0 +1,13 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Sensores</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-button (click)="navigateToSensorCreate()" expand="block">Adicionar Sensor</ion-button>
+  <app-sensor-read [sensors]="sensors"></app-sensor-read>
+</ion-content>

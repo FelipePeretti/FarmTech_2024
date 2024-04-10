@@ -1,0 +1,22 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Farm App</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Temperatura e Umidade</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p>Temperatura: {{ temperatura }}°C</p>
+      <p>Umidade: {{ umidade }}%</p>
+      <p>Timestamp: {{ timestamp }}</p>
+    </ion-card-content>
+  </ion-card>
+  
+</ion-content>

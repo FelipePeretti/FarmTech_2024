@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de Sensor</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="sensorForm" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="stacked">Nome do Sensor</ion-label>
+      <ion-input formControlName="nomeSensor" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Tipo do Sensor</ion-label>
+      <ion-input formControlName="tipoSensor" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Localização</ion-label>
+      <ion-input formControlName="localizacao" type="text"></ion-input>
+    </ion-item>
+    
+    <ion-item>
+      <ion-label position="stacked">Data de Instalação</ion-label>
+      <ion-datetime displayFormat="YYYY-MM-DD" formControlName="dataInstalacao"></ion-datetime>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" [disabled]="!sensorForm.valid">Cadastrar Sensor</ion-button>
+  </form>
+</ion-content>

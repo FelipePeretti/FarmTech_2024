@@ -1,0 +1,28 @@
+/* sensor-form.component.scss */
+
+ion-content {
+    --background: #f4f4f4; /* Cor de fundo para o conteúdo */
+  }
+  
+  form {
+    max-width: auto;
+    margin: auto;
+    padding: 20px;
+    background: #fff; /* Cor de fundo do formulário */
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para o formulário */
+  }
+  
+  ion-item {
+    margin-bottom: 20px;
+  }
+
+  ion-label {
+    margin-bottom: 50px;
+  }
+  
+  ion-button {
+    --background: #007bff; /* Cor de fundo para o botão */
+    --color: #fff; /* Cor do texto para o botão */
+  }
+  
