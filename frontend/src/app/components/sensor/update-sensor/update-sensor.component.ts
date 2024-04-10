@@ -8,6 +8,10 @@ import { MatDatepickerModule } from "@angular/material/datepicker";
 import { Sensor } from "../sensor.model";
 import { SensorService } from "../sensor.service";
 import { ActivatedRoute, Router } from "@angular/router";
+import { SensorTipo } from "../sensor-tipo.model";
+import { MatOption } from "@angular/material/core";
+import { CommonModule } from "@angular/common";
+import { MatSelect } from "@angular/material/select";
 
 @Component({
   selector: "app-update-sensor",
@@ -19,6 +23,9 @@ import { ActivatedRoute, Router } from "@angular/router";
     MatButtonModule,
     MatInputModule,
     MatDatepickerModule,
+    MatOption,
+    CommonModule,
+    MatSelect,
   ],
   templateUrl: "./update-sensor.component.html",
   styleUrl: "./update-sensor.component.css",
@@ -31,6 +38,8 @@ export class UpdateSensorComponent implements OnInit {
     _dataInstalacao: "",
   };
 
+  sensorTipo: SensorTipo[] = [];
+
   constructor(
     private sensorService: SensorService,
     private router: Router,
@@ -42,15 +51,17 @@ export class UpdateSensorComponent implements OnInit {
     this.sensorService.readById(id!).subscribe((sensor) => {
       this.sensor = sensor;
     });
+
+    this.sensorService
+      .readSensorTipo()
+      .subscribe((sensorTipo) => (this.sensorTipo = sensorTipo));
   }
 
   updateSensor(): void {
-    this.sensorService
-      .update(this.sensor)
-      .subscribe(() =>
-        this.sensorService.showMessage("Alteração realizada com sucesso!")
-      );
-    this.router.navigate(["/sensor"]);
+    this.sensorService.update(this.sensor).subscribe(() => {
+      this.sensorService.showMessage("Alteração realizada com sucesso!");
+      this.router.navigate(["/sensor"]);
+    });
   }
 
   cancel(): void {

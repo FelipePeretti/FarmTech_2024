@@ -4,12 +4,14 @@ import { MatSnackBar } from "@angular/material/snack-bar";
 import { Sensor } from "./sensor.model";
 import { Observable, EMPTY } from "rxjs";
 import { map, catchError } from "rxjs/operators";
+import { SensorTipo } from "./sensor-tipo.model";
 
 @Injectable({
   providedIn: "root",
 })
 export class SensorService {
   baseUrl = "http://localhost:3000/sensor";
+  baseUrl_tipo = "http://localhost:3000/tipo-sensor";
 
   constructor(private snackBar: MatSnackBar, private http: HttpClient) {}
 
@@ -31,6 +33,10 @@ export class SensorService {
 
   read(): Observable<Sensor[]> {
     return this.http.get<Sensor[]>(this.baseUrl);
+  }
+
+  readSensorTipo(): Observable<SensorTipo[]> {
+    return this.http.get<SensorTipo[]>(this.baseUrl_tipo);
   }
 
   readById(id: string): Observable<Sensor> {

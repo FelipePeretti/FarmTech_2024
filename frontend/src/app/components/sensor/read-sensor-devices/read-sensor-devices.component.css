@@ -1,0 +1,71 @@
+.sensor-card {
+    width: 300px;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .sensor-card:hover {
+    transform: translateY(-5px);
+  }
+
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .telemetry-list {
+    flex: 1;
+  }
+  
+  .sensor-card {
+    margin-bottom: 10px;
+  }
+  
+  .telemetry-card .mat-card-header {
+    background-color: #f0f0f0;
+  }
+  
+  .sensor-list {
+    flex: 1;
+    margin-right: 20px; /* Espaço entre as listas */
+  }
+  
+  .telemetry-card {
+    width: 400px; /* Limita o tamanho dos cards */
+    height: 100%;
+    margin-bottom: 10px; /* Adiciona espaço entre os cards */
+  }
+
+  .telemetry-panel {
+    overflow-y: auto; /* Adiciona scroll se o conteúdo exceder o tamanho do painel */
+    max-height: calc(100vh - 5px);
+    height: 450px;
+    flex: 1;
+     /* Altura máxima do painel - 20px */
+  }
+
+  .selected {
+    border: 2px solid #007bff; /* Cor da borda para o card selecionado */
+  }
+
+  /* Estilizar a barra de rolagem */
+.telemetry-panel::-webkit-scrollbar {
+    width: 8px; /* Largura da barra de rolagem */
+  }
+  
+  .telemetry-panel::-webkit-scrollbar-thumb {
+    background-color: #888; /* Cor da barra de rolagem */
+    border-radius: 4px; /* Raio da barra de rolagem */
+  }
+  
+  /* Manter sempre rolado para baixo */
+  .telemetry-panel {
+    scroll-behavior: smooth;
+  }
+  
+  .telemetry-panel .telemetry-list {
+    display: flex;
+    flex-direction: column-reverse; /* Reverter a ordem dos elementos para manter sempre rolado para baixo */
+  }

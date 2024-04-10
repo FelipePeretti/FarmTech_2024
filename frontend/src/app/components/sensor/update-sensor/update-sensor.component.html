@@ -18,12 +18,10 @@
       />
     </mat-form-field>
     <mat-form-field>
-      <input
-        matInput
-        placeholder="Tipo de Sensor"
-        [(ngModel)]="sensor._tiposensor"
-        name="_tipoSensor"
-      />
+      <mat-label>Tipo de Sensor</mat-label>
+            <mat-select [(ngModel)]="sensor._tiposensor" name="_tiposensor">
+                <mat-option *ngFor="let tipo of sensorTipo" [value]="tipo.id">{{ tipo.tipo }}</mat-option>
+            </mat-select>
     </mat-form-field>
     <mat-form-field>
       <input

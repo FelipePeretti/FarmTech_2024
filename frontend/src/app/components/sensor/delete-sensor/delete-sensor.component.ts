@@ -18,11 +18,9 @@ export class DeleteSensorComponent implements OnInit {
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get("id");
-    this.sensorService
-      .delete(id!)
-      .subscribe(() =>
-        this.sensorService.showMessage("Exclusão realizada com sucesso!")
-      );
-    this.router.navigate(["/sensor"]);
+    this.sensorService.delete(id!).subscribe(() => {
+      this.sensorService.showMessage("Exclusão realizada com sucesso!");
+      this.router.navigate(["/sensor"]);
+    });
   }
 }

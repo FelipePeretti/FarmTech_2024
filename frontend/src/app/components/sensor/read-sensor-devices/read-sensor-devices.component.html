@@ -1,0 +1,38 @@
+<!--<mat-card class="sensor-card" *ngFor="let sensor of sensors">
+  <mat-card-header>
+    <mat-card-title>Nome do Sensor: {{ sensor._nomeSensor }}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>Localização: {{ sensor._localizacao }}</p>
+    <p>Tipo do Sensor: {{ sensor._tiposensor }}</p>
+  </mat-card-content>
+</mat-card>-->
+
+<div class="container">
+  <div class="sensor-list">
+    <mat-card class="sensor-card" *ngFor="let sensor of sensors" [class.selected]="selectedSensor === sensor" (click)="openTelemetryList(sensor)">
+      <mat-card-header>
+        <mat-card-title>{{ sensor._nomeSensor }}</mat-card-title>
+        <mat-card-subtitle>{{ sensor._localizacao }}</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-content>
+    <p>Tipo do Sensor: {{ sensor._tiposensor }}</p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="telemetry-panel">
+    <div class="telemetry-list" #telemetryPanel>
+      <mat-card *ngFor="let telemetry of telemetryList" class="telemetry-card">
+        <mat-card-header>
+          <mat-card-title>Telemetria do Sensor: {{ selectedSensor?._nomeSensor }}</mat-card-title>
+          <mat-card-subtitle>Timestamp: {{ telemetry.timestamp }}</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p>Value: {{ telemetry.value }}</p>
+          
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
